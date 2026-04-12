@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { SERVICES_DATA } from '../data/content';
-import { Heart, Cake, Gem, Briefcase, Flame, Utensils } from 'lucide-react';
+import { Heart, Cake, Gem, Briefcase, Flame, Utensils, CheckCircle2 } from 'lucide-react';
 
 const iconMap = {
   Heart,
@@ -14,27 +14,30 @@ const iconMap = {
 
 const Services = () => {
   return (
-    <div className="pt-16">
+    <div className="pt-20 bg-bg-light">
       {/* Header */}
-      <section className="bg-primary py-20 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-serif font-bold mb-4"
+      <section className="relative py-24 red-gradient text-white text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/mandala.png')] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="max-w-3xl mx-auto"
           >
-            Our Services
-          </motion.h1>
-          <p className="text-xl opacity-80 max-w-2xl mx-auto">
-            Comprehensive catering solutions for every occasion, big or small.
-          </p>
+            <h1 className="text-5xl md:text-7xl font-sans font-black mb-6 tracking-tight">
+              Culinary <span className="text-accent italic">Craftsmanship</span>
+            </h1>
+            <p className="text-xl opacity-90 font-medium max-w-2xl mx-auto leading-relaxed">
+              We provide end-to-end catering solutions personalized for every unique celebration.
+            </p>
+          </motion.div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
             {SERVICES_DATA.map((service, idx) => {
               const IconComponent = iconMap[service.icon as keyof typeof iconMap];
               return (
@@ -43,23 +46,34 @@ const Services = () => {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="group"
+                  transition={{ delay: idx * 0.05 }}
+                  className="bg-white rounded-[2.5rem] p-4 premium-shadow hover:premium-shadow-hover transition-all group border border-gray-50 flex flex-col h-full"
                 >
-                  <div className="relative h-64 mb-8 rounded-[40px] overflow-hidden">
+                  <div className="relative h-64 mb-8 rounded-[2rem] overflow-hidden">
                     <img 
                       src={`https://images.unsplash.com/photo-${idx === 0 ? '1511795409834-ef04bbd61622' : idx === 1 ? '1530103043960-ef38714abb15' : idx === 2 ? '1519225421980-715cb0215aed' : idx === 3 ? '1475721027785-f74eccf877e2' : idx === 4 ? '1504674900247-0877df9cc836' : '1555244162-803834f70033'}?auto=format&fit=crop&q=80&w=800`} 
                       alt={service.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
-                    <div className="absolute top-6 right-6 bg-white w-14 h-14 rounded-2xl flex items-center justify-center text-primary shadow-xl">
+                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center text-primary shadow-lg border border-white/20">
                       <IconComponent size={28} />
                     </div>
                   </div>
-                  <h3 className="text-2xl font-serif font-bold mb-4 text-gray-900 group-hover:text-primary transition-colors">{service.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.description}</p>
+                  <div className="px-6 pb-6 flex-grow">
+                    <h3 className="text-2xl font-black mb-4 text-gray-900 group-hover:text-primary transition-colors tracking-tight">{service.title}</h3>
+                    <p className="text-gray-500 leading-relaxed text-sm">{service.description}</p>
+                  </div>
+                  <div className="px-6 pb-8">
+                    <div className="w-full h-[1px] bg-gray-100 mb-6" />
+                    <div className="flex flex-wrap gap-2">
+                       {['Hygienic', 'Fresh', 'Premium'].map(tag => (
+                         <span key={tag} className="text-[10px] font-bold uppercase tracking-widest px-3 py-1 bg-gray-50 text-gray-400 rounded-full flex items-center">
+                           <CheckCircle2 size={10} className="mr-1 text-primary" /> {tag}
+                         </span>
+                       ))}
+                    </div>
+                  </div>
                 </motion.div>
               );
             })}
@@ -67,28 +81,24 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Process Section */}
-      <section className="py-24 bg-bg-light">
+      {/* High-Level Features (Minimalist) */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-serif font-bold mb-4">How We Work</h2>
-            <div className="w-24 h-1 bg-accent mx-auto" />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              { step: "01", title: "Consultation", desc: "We discuss your event needs, guest count, and preferences." },
-              { step: "02", title: "Menu Planning", desc: "Our chefs design a custom menu that fits your vision." },
-              { step: "03", title: "Preparation", desc: "Fresh ingredients are sourced and prepared with care." },
-              { step: "04", title: "Execution", desc: "Professional setup and service at your event venue." }
-            ].map((item, idx) => (
-              <div key={idx} className="relative p-8 bg-white rounded-3xl shadow-sm">
-                <span className="text-5xl font-serif font-bold text-primary/10 absolute top-4 right-6">{item.step}</span>
-                <h4 className="text-xl font-bold mb-4 relative z-10">{item.title}</h4>
-                <p className="text-gray-500 relative z-10">{item.desc}</p>
-              </div>
-            ))}
-          </div>
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+             {[
+               { title: "Live Counters", icon: <Flame /> },
+               { title: "Gourmet Menu", icon: <Utensils /> },
+               { title: "Professional Staff", icon: <Users /> },
+               { title: "Hygienic Prep", icon: <CheckCircle2 /> }
+             ].map((feat, i) => (
+               <div key={i} className="flex items-center space-x-4 p-6 bg-gray-50 rounded-2xl">
+                 <div className="w-12 h-12 red-gradient rounded-xl flex items-center justify-center text-white">
+                   {feat.icon}
+                 </div>
+                 <span className="font-bold text-gray-900">{feat.title}</span>
+               </div>
+             ))}
+           </div>
         </div>
       </section>
     </div>
@@ -96,3 +106,4 @@ const Services = () => {
 };
 
 export default Services;
+

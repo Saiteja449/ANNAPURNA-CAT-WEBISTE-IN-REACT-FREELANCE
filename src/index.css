@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Playfair Display", serif;
   
   --color-primary: #D32F2F;
+  --color-primary-dark: #A12323;
   --color-secondary: #FFFFFF;
   --color-accent: #C9A227;
-  --color-bg-light: #F5F5F5;
+  --color-accent-light: #E5C76B;
+  --color-bg-light: #FDFDFD;
+  --color-gray-soft: #F5F5F7;
 }
 
 @layer base {
@@ -17,16 +20,24 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  .font-playfair {
     @apply font-serif;
   }
 }
 
 .glass-nav {
-  @apply bg-white/90 backdrop-blur-md border-b border-gray-200;
+  @apply bg-white/80 backdrop-blur-xl border-b border-gray-100;
 }
 
-.mandala-bg {
-  background-image: url('https://www.transparenttextures.com/patterns/mandala.png');
+.premium-shadow {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+}
+
+.premium-shadow-hover:hover {
+  box-shadow: 0 30px 60px rgba(211, 47, 47, 0.1);
 }
 
 .gold-gradient {
@@ -37,10 +48,25 @@
   background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
 }
 
-.dark-red-gradient {
-  background: linear-gradient(135deg, #B71C1C 0%, #7F0000 100%);
+.red-gold-gradient {
+  background: linear-gradient(135deg, #D32F2F 0%, #C9A227 100%);
 }
 
-.accent-gradient {
-  background: linear-gradient(135deg, #C9A227 0%, #B8860B 100%);
+.soft-red-bg {
+  background: linear-gradient(180deg, #FFF5F5 0%, #FFFFFF 100%);
 }
+
+.card-rounded {
+  @apply rounded-[2.5rem];
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
