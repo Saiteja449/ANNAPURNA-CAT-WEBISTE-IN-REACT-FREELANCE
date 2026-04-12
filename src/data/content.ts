@@ -1,59 +1,72 @@
 export const MENU_DATA = {
   "Welcome Drinks": [
-    { name: "Fresh Lime Soda", description: "Refreshing lime juice with soda and mint" },
-    { name: "Virgin Mojito", description: "Classic mint and lime mocktail" },
-    { name: "Fruit Punch", description: "Mixed fruit juices with a dash of grenadine" },
-    { name: "Masala Chai", description: "Traditional Indian spiced tea" }
+    "Soft Drinks", "Watermelon", "Fruit Punch", "Blue Smoothie", "Strawberry Delight", "Banana Milk Shake"
   ],
   "Salads": [
-    { name: "Garden Green Salad", description: "Fresh seasonal vegetables with lemon dressing" },
-    { name: "Russian Salad", description: "Boiled veggies in creamy mayonnaise" },
-    { name: "Kachumber Salad", description: "Diced cucumber, tomato, and onion with spices" }
+    "Green Salad", "Aloo Chana Chat", "Peanut Chat", "Cucumber Yoghurt", "Aloo Chat", "Sprouts Salad", "Russian Salad"
   ],
   "Snacks": [
-    { name: "Paneer Tikka", description: "Grilled cottage cheese marinated in spices" },
-    { name: "Hara Bhara Kabab", description: "Spinach and green pea patties" },
-    { name: "Veg Spring Rolls", description: "Crispy rolls with vegetable filling" },
-    { name: "Samosa", description: "Classic potato-filled pastry" }
+    "Veg Cheeze Balls", "Garlic Pops", "Veg Nuggets", "Veg Spring Roll", "Mirchi Bujji", "Onion Pakodi", "Corn Samosa", "Veg Manchuria", "Crispy Corn", "Paneer 65"
   ],
-  "Dal": [
-    { name: "Dal Makhani", description: "Creamy black lentils cooked overnight" },
-    { name: "Dal Tadka", description: "Yellow lentils tempered with cumin and garlic" }
+  "Chinese": [
+    "Veg Soft Noodles", "Veg Fried Rice", "Schezwan Noodles", "Schezwan Fried Rice", "Corn Fried Rice", "Mixed Fried Rice"
   ],
-  "Pickles": [
-    { name: "Mango Pickle", description: "Tangy and spicy raw mango" },
-    { name: "Mixed Veg Pickle", description: "Assorted vegetables in mustard oil" }
+  "Veg Fry Curries": [
+    "Bhendi Fry", "Aloo Fry", "Carrot beans Fry", "Vankaya Pakoda Fry", "Gobi Pakoda Fry", "Kanda Fry", "Cabbage Fry", "Cabbage Pakoda Fry"
   ],
-  "Rice Items": [
-    { name: "Veg Biryani", description: "Fragrant basmati rice with seasonal veggies" },
-    { name: "Jeera Rice", description: "Cumin flavored basmati rice" },
-    { name: "Steamed Rice", description: "Plain fluffy basmati rice" }
-  ],
-  "Curries": [
-    { name: "Mix Veg Curry", description: "Seasonal vegetables in a rich gravy" },
-    { name: "Malai Kofta", description: "Potato and paneer balls in creamy sauce" },
-    { name: "Aloo Gobi", description: "Potato and cauliflower dry curry" }
+  "Veg Gravy Curry": [
+    "Bagara Baingan", "Gutti vankaya", "Veg Kadai", "Chana Masala", "Mixed Veg Curry", "Tomato Munakkada", "Tomato Mirchi Masala", "Capsicum Masala", "Aloo Tomato Khurma", "Chikudukaya Tomato", "Birakaya Alchantha"
   ],
   "Paneer": [
-    { name: "Paneer Butter Masala", description: "Cottage cheese in a rich tomato-butter gravy" },
-    { name: "Palak Paneer", description: "Cottage cheese in a smooth spinach puree" },
-    { name: "Kadai Paneer", description: "Paneer with bell peppers and freshly ground spices" }
+    "Paneer Butter masala", "Palak Paneer", "Paneer Dopyaza", "Kadai Paneer", "Mutter Paneer", "Paneer Chatpata"
   ],
-  "Sweets": [
-    { name: "Gulab Jamun", description: "Soft milk dumplings in sugar syrup" },
-    { name: "Gajar Ka Halwa", description: "Traditional carrot pudding with nuts" },
-    { name: "Rasmalai", description: "Soft paneer discs in saffron milk" }
+  "Dal": [
+    "Tamato Dal", "Palak Dal", "Yellow Dal", "Dal Makhani", "Dal Tadka", "Mango Dal", "Sorakaya Pappu", "Dosakaya Pappu"
+  ],
+  "Pickles": [
+    "Gongura Pachadi", "Birakaya Pachadi", "Sorakaya Pachadi", "Tomata Pudhina"
+  ],
+  "Flavour Rice": [
+    "Tomato Rice", "Coconut Rice", "Pulihora Rice", "Samber Rice", "Dal Rice", "Jeera Rice", "Curd Rice", "Mango Rice"
+  ],
+  "Chat": [
+    "Pani Puri", "Cuttlet", "Pav Baji"
+  ],
+  "Continental": [
+    "Veg sandwich", "Grill sandwich", "Live Pizza Counter", "French Fries"
+  ],
+  "Accompaniments": [
+    "Plain Rice", "Pickle", "Sambar", "Podi's", "Plain Curd", "Papad", "Ghee"
+  ],
+  "Breads": [
+    "Puri", "Rumali Roti", "Butter Rumali Roti"
+  ],
+  "Veg Biriyani": [
+    "Veg Biryani", "Veg Pulao", "Veg Fried Rice"
+  ],
+  "Curd & Raitas": [
+    "Pain Curd", "Mixed Raita", "Onion Raita", "Boonadhi Raitha"
+  ],
+  "Sweet": [
+    "Kalajamun", "Gulab Jamun", "Qubani-ka-meetha", "Double -Ka-Meetha", "Carrot Halwa", "Jilebi", "Bobbatlu", "Fruit Salad Custard", "Basundi", "Bengali sweet", "Rasmalai", "Rasgulla"
   ],
   "Ice Cream": [
-    { name: "Vanilla with Chocolate Sauce", description: "Classic vanilla topped with rich chocolate" },
-    { name: "Butterscotch", description: "Creamy butterscotch with crunchy bits" },
-    { name: "Mango", description: "Seasonal fresh mango flavor" }
+    "Vanilla", "Strawberry", "Butter Scotch", "Choco Nutts", "Kulfi Sticks"
+  ],
+  "Pan": [
+    "Sweet Pan", "Culcutta Pan", "Fire Pan", "Sweet Supari"
   ],
   "Breakfast": [
-    { name: "Idli Sambar", description: "Steamed rice cakes with lentil stew" },
-    { name: "Vada", description: "Crispy savory donuts" },
-    { name: "Poori Bhaji", description: "Deep-fried bread with potato curry" },
-    { name: "Upma", description: "Savory semolina porridge" }
+    "Kaju Upma", "Idli", "Wada", "Dosa", "Puri", "Bonda"
+  ],
+  "Hot Beverages": [
+    "Tea", "Coffee"
+  ],
+  "Cold Beverages": [
+    "Water Bottles", "Soda", "Soft Drinks"
+  ],
+  "Special Items": [
+    "Fruit Counter (LIVE)", "Choclate Fountain", "Sugar Candy", "Pop Corn", "Water Bottles", "Banana Leaves", "LED Counter"
   ]
 };
 

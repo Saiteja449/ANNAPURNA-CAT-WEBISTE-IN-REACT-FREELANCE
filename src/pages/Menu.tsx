@@ -1,130 +1,127 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React from 'react';
+import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { MENU_DATA } from '../data/content';
-import { Utensils, Star, Award } from 'lucide-react';
+import { Utensils, Star, Award, CheckCircle2, Phone, ArrowRight } from 'lucide-react';
 
 const Menu = () => {
-  const [activeCategory, setActiveCategory] = useState(Object.keys(MENU_DATA)[0]);
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const stagger = {
+    visible: { transition: { staggerChildren: 0.1 } }
+  };
 
   return (
-    <div className="pt-16">
-      {/* Header */}
-      <section className="bg-primary py-20 text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full mandala-bg opacity-20" />
-        </div>
+    <div className="pt-20 bg-white">
+      {/* --- HERO HEADER --- */}
+      <section className="relative py-24 red-gradient text-white overflow-hidden text-center">
+        <div className="absolute inset-0 mandala-pattern opacity-10" />
         <div className="max-w-7xl mx-auto px-4 relative z-10">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-serif font-bold mb-4"
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="space-y-6"
           >
-            Our Menu
-          </motion.h1>
-          <p className="text-xl opacity-80 max-w-2xl mx-auto">
-            Explore our diverse range of traditional and contemporary Indian delicacies.
-          </p>
+            <span className="text-accent font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Our Culinary Curation</span>
+            <h1 className="text-5xl md:text-7xl font-sans font-black mb-6 tracking-tighter">
+              The <span className="text-accent italic">Grand Menu</span>
+            </h1>
+            <p className="text-xl opacity-90 font-medium max-w-2xl mx-auto leading-relaxed">
+              From traditional flavors to contemporary delights, explore our complete catering repertoire.
+            </p>
+          </motion.div>
         </div>
       </section>
-
-      {/* Menu Navigation */}
-      <section className="py-12 bg-white sticky top-[64px] z-40 shadow-sm overflow-x-auto">
-        <div className="max-w-7xl mx-auto px-4 flex space-x-4 md:justify-center whitespace-nowrap scrollbar-hide">
-          {Object.keys(MENU_DATA).map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                activeCategory === category 
-                  ? 'bg-primary text-white shadow-lg' 
-                  : 'bg-bg-light text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-      </section>
-
-      {/* Menu Items */}
-      <section className="py-20 bg-bg-light min-h-[600px]">
+      <section className="py-16 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCategory}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="flex items-center space-x-4 mb-12">
-                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-primary shadow-sm">
-                  <Utensils size={24} />
+          <div className="columns-1 md:columns-3 lg:columns-4 gap-6 space-y-10">
+            {Object.entries(MENU_DATA).map(([category, items], catIdx) => (
+              <motion.div
+                key={category}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={stagger}
+                className="break-inside-avoid"
+              >
+                <div className="mb-6 flex items-center space-x-3">
+                  <div className="w-10 h-1 gold-gradient rounded-full" />
+                  <h3 className="text-xl font-black text-gray-900 uppercase tracking-tighter">
+                    {category}
+                  </h3>
                 </div>
-                <h2 className="text-3xl font-serif font-bold text-gray-900">{activeCategory}</h2>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {MENU_DATA[activeCategory as keyof typeof MENU_DATA].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: idx * 0.05 }}
-                    className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all group"
-                  >
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary transition-colors">{item.name}</h3>
-                      <div className="flex text-accent">
-                        <Star size={14} fill="currentColor" />
-                        <Star size={14} fill="currentColor" />
-                        <Star size={14} fill="currentColor" />
-                        <Star size={14} fill="currentColor" />
-                        <Star size={14} fill="currentColor" />
-                      </div>
-                    </div>
-                    <p className="text-gray-500 text-sm leading-relaxed">{item.description}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </AnimatePresence>
+                <div className="space-y-2 pl-4 border-l-2 border-gray-50">
+                  {items.map((item, idx) => (
+                    <motion.div 
+                      key={idx} 
+                      variants={fadeInUp}
+                      className="text-gray-500 font-medium text-lg hover:text-primary transition-colors py-1 cursor-default"
+                    >
+                      {item}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Menu Highlights */}
-      <section className="py-24 bg-white">
+      {/* --- CTA BANNER --- */}
+      <section className="py-16 bg-gray-soft/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div className="bg-primary/5 p-12 rounded-[40px] border-2 border-primary/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-6 opacity-10">
-                <Award size={120} />
-              </div>
-              <h3 className="text-3xl font-serif font-bold mb-4 text-primary">Standard Menu</h3>
-              <p className="text-gray-600 mb-8">Perfect for casual gatherings and small parties. Includes all essential items with premium quality.</p>
-              <ul className="space-y-3">
-                {['2 Welcome Drinks', '3 Snacks', 'Main Course (5 Items)', '2 Desserts'].map((item, i) => (
-                  <li key={i} className="flex items-center space-x-3 text-gray-700 font-medium">
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="red-gradient rounded-[3rem] min-h-[450px] relative overflow-hidden shadow-2xl shadow-primary/30 flex items-center group">
+            <div className="absolute inset-0 mandala-pattern opacity-10" />
+            
+            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+              >
+                <img
+                  src="/assets/images/cheif.png"
+                  alt="Executive Chef"
+                  className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] origin-bottom"
+                />
+              </motion.div>
             </div>
-            <div className="bg-accent/5 p-12 rounded-[40px] border-2 border-accent/10 relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-6 opacity-10">
-                <Star size={120} />
-              </div>
-              <h3 className="text-3xl font-serif font-bold mb-4 text-accent">Premium Menu</h3>
-              <p className="text-gray-600 mb-8">Our most popular choice for grand weddings. Features our signature dishes and live counters.</p>
-              <ul className="space-y-3">
-                {['Unlimited Mocktails', '5 Snacks & Starters', 'Grand Buffet (12+ Items)', 'Live Pasta & Chaat Counter', 'Assorted Sweets & Ice Cream'].map((item, i) => (
-                  <li key={i} className="flex items-center space-x-3 text-gray-700 font-medium">
-                    <div className="w-2 h-2 bg-accent rounded-full" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+
+            <div className="relative z-20 w-full lg:w-4/5 ml-auto px-8 py-16 md:p-16 lg:pr-24 text-center lg:text-right">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans font-black text-white mb-4 leading-tight tracking-tighter">
+                  Ready to Elevate
+                </h2>
+                <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans font-black text-accent italic mb-10 leading-tight tracking-tighter">
+                  Your Next Event?
+                </h2>
+
+                <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-end">
+                  <Link
+                    to="/contact"
+                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-2xl font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn"
+                  >
+                    Get a Quote
+                    <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
+                  </Link>
+                  <a
+                    href="tel:9542935841"
+                    className="w-full sm:w-auto px-12 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
+                  >
+                    <Phone size={20} className="mr-2" />
+                    Call Us Now
+                  </a>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -134,3 +131,4 @@ const Menu = () => {
 };
 
 export default Menu;
+
