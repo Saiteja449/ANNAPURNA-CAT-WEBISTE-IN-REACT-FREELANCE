@@ -232,7 +232,7 @@ const About = () => {
             <div className="absolute inset-0 mandala-pattern opacity-10" />
 
             {/* Left Chef Image */}
-            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none">
+            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none hidden lg:block">
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}

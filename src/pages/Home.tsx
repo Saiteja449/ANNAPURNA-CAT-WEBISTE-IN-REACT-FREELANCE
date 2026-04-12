@@ -50,18 +50,8 @@ const Home = () => {
               variants={containerVariants}
               initial="hidden"
               animate="visible"
-              className="lg:col-span-3 text-center lg:text-left"
+              className="lg:col-span-3 text-center lg:text-left order-2 lg:order-1"
             >
-              {/* <motion.div
-                variants={itemVariants}
-                className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-primary/10 mb-6 shadow-sm"
-              >
-                <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                <span className="text-primary font-bold text-xs uppercase tracking-wider">
-                  India's Premium Catering Experience
-                </span>
-              </motion.div> */}
-
               <motion.h1
                 variants={itemVariants}
                 className="text-4xl md:text-6xl font-sans font-black text-gray-900 mb-8 leading-[1.2] tracking-tight"
@@ -105,20 +95,20 @@ const Home = () => {
 
             {/* Right Image Composition */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ duration: 1.2, ease: "circOut" }}
-              className="lg:col-span-2 relative hidden lg:block"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="lg:col-span-2 relative order-1 lg:order-2"
             >
               <div className="relative z-10">
                 <img
                   src={HERO_IMAGE}
                   alt="Premium Plate"
-                  className="w-full max-w-[450px] mx-auto "
+                  className="w-full max-w-[300px] md:max-w-[450px] mx-auto "
                 />
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border-[1px] border-dashed border-primary/20 rounded-full animate-[spin_20s_linear_infinite]" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] border-[1px] border-primary/10 rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-[250px] md:h-[400px] border-[1px] border-dashed border-primary/20 rounded-full animate-[spin_20s_linear_infinite]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[300px] h-[200px] md:h-[300px] border-[1px] border-primary/10 rounded-full" />
             </motion.div>
           </div>
         </div>
@@ -494,7 +484,7 @@ const Home = () => {
             <div className="absolute inset-0 mandala-pattern opacity-10" />
 
             {/* Left Chef Image - Positioned at bottom */}
-            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none">
+            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none hidden lg:block">
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
