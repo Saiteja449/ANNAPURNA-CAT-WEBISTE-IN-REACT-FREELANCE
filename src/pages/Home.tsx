@@ -40,7 +40,7 @@ const Home = () => {
 
   return (
     <div className="overflow-x-hidden  bg-white  ">
-      <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 bg-white   overflow-hidden">
+      <section className="relative min-h-[100vh] flex items-center pt-24 pb-12 bg-white   overflow-hidden">
         <div className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px]" />
         <div className="absolute bottom-20 left-[-5%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px]" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -52,7 +52,7 @@ const Home = () => {
               animate="visible"
               className="lg:col-span-3 text-center lg:text-left"
             >
-              <motion.div
+              {/* <motion.div
                 variants={itemVariants}
                 className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-primary/10 mb-6 shadow-sm"
               >
@@ -60,7 +60,7 @@ const Home = () => {
                 <span className="text-primary font-bold text-xs uppercase tracking-wider">
                   India's Premium Catering Experience
                 </span>
-              </motion.div>
+              </motion.div> */}
 
               <motion.h1
                 variants={itemVariants}

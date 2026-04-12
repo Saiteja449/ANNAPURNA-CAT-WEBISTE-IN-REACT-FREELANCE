@@ -34,11 +34,11 @@ const About = () => {
             animate={{ opacity: 1, scale: 1 }}
             className="space-y-6"
           >
-            <span className="text-accent font-bold tracking-[0.4em] uppercase text-xs mb-4 block">
+            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-4 block">
               Established 2017
             </span>
             <h1 className="text-5xl md:text-7xl font-sans font-black mb-6 tracking-tighter">
-              Our <span className="text-accent italic">Story</span>
+              Our <span className="text-white italic">Story</span>
             </h1>
             <p className="text-xl opacity-90 font-medium max-w-2xl mx-auto leading-relaxed">
               Serving happiness through authentic flavors and exceptional
