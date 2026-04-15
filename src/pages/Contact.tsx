@@ -3,6 +3,16 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Send, Clock, ArrowRight } from "lucide-react";
 
+const FlowerIcon = ({ size = 24, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className}>
+    <path d="M12 2C12 2 14 6 12 10C10 6 12 2 12 2Z" fill="currentColor" opacity="0.8"/>
+    <path d="M12 22C12 22 14 18 12 14C10 18 12 22 12 22Z" fill="currentColor" opacity="0.8"/>
+    <path d="M2 12C2 12 6 14 10 12C6 10 2 12 2 12Z" fill="currentColor" opacity="0.8"/>
+    <path d="M22 12C22 12 18 14 14 12C18 10 22 12 22 12Z" fill="currentColor" opacity="0.8"/>
+    <circle cx="12" cy="12" r="2" fill="var(--color-primary)" />
+  </svg>
+);
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -26,15 +36,16 @@ const Contact = () => {
     <div className="pt-20 bg-bg-light">
       <section className="relative py-24 red-gradient text-white overflow-hidden text-center">
         <div className="absolute inset-0 mandala-pattern opacity-10" />
-        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center mt-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="space-y-6"
           >
-            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-4 block">
+            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-2 block">
               Let's Connect
             </span>
+            <div className="text-accent telugu-text text-xl mb-4 font-bold">మమ్మల్ని సంప్రదించండి</div>
             <h1 className="text-5xl md:text-7xl font-sans font-black mb-6 tracking-tighter">
               Get in <span className="text-white italic">Touch</span>
             </h1>
@@ -142,12 +153,12 @@ const Contact = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white p-10 md:p-14  border border-gray-50 relative overflow-hidden"
+              className="bg-white p-10 md:p-14 border border-gray-50 relative overflow-hidden temple-card"
             >
               <div className="absolute top-0 right-0 w-32 h-32 red-gradient opacity-5 rounded-bl-[100px]" />
 
-              <h2 className="text-3xl font-black mb-8 text-gray-900 tracking-tight">
-                Send a Message
+              <h2 className="text-3xl font-black mb-8 text-gray-900 tracking-tight font-serif flex items-center">
+                Send a Message <FlowerIcon className="ml-3 text-accent" size={28} />
               </h2>
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="space-y-2">
@@ -161,7 +172,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
                     }
-                    className="w-full px-8 py-5 rounded-2xl bg-gray-50 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-gray-900 font-medium"
+                    className="w-full px-8 py-5 border-[3px] border-double border-primary/20 focus:border-primary/60 focus:outline-none bg-white transition-all text-gray-900 font-medium rounded-md"
                     placeholder="Enter your name"
                   />
                 </div>
@@ -176,7 +187,7 @@ const Contact = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, phone: e.target.value })
                     }
-                    className="w-full px-8 py-5 rounded-2xl bg-gray-50 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-gray-900 font-medium"
+                    className="w-full px-8 py-5 border-[3px] border-double border-primary/20 focus:border-primary/60 focus:outline-none bg-white transition-all text-gray-900 font-medium rounded-md"
                     placeholder="Enter your phone"
                   />
                 </div>
@@ -184,19 +195,24 @@ const Contact = () => {
                   <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
                     Event Type
                   </label>
-                  <select
-                    value={formData.eventType}
-                    onChange={(e) =>
-                      setFormData({ ...formData, eventType: e.target.value })
-                    }
-                    className="w-full px-8 py-5 rounded-2xl bg-gray-50 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-gray-900 font-medium appearance-none"
-                  >
-                    <option>Wedding</option>
-                    <option>Birthday Party</option>
-                    <option>Engagement</option>
-                    <option>Corporate Event</option>
-                    <option>Other Special Occasion</option>
-                  </select>
+                  <div className="relative">
+                    <select
+                      value={formData.eventType}
+                      onChange={(e) =>
+                        setFormData({ ...formData, eventType: e.target.value })
+                      }
+                      className="w-full px-8 py-5 border-[3px] border-double border-primary/20 focus:border-primary/60 focus:outline-none bg-white transition-all text-gray-900 font-medium appearance-none rounded-md"
+                    >
+                      <option>Wedding</option>
+                      <option>Birthday Party</option>
+                      <option>Engagement</option>
+                      <option>Corporate Event</option>
+                      <option>Other Special Occasion</option>
+                    </select>
+                    <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none text-primary/50">
+                      ▼
+                    </div>
+                  </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">
@@ -208,13 +224,13 @@ const Contact = () => {
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    className="w-full px-8 py-5 rounded-2xl bg-gray-50 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all text-gray-900 font-medium"
+                    className="w-full px-8 py-5 border-[3px] border-double border-primary/20 focus:border-primary/60 focus:outline-none bg-white transition-all text-gray-900 font-medium rounded-md resize-none"
                     placeholder="Tell us about your event..."
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full py-5 red-gradient text-white rounded-2xl font-black text-lg hover:shadow-2xl hover:shadow-primary/30 transition-all flex items-center justify-center group"
+                  className="w-full py-5 temple-btn text-primary font-black text-lg flex items-center justify-center group"
                 >
                   Confirm Inquiry
                   <Send
@@ -241,8 +257,8 @@ const Contact = () => {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/assets/images/cheif.png"
-                  alt="Executive Chef"
+                  src="/assets/images/telugu_woman_cooking.png"
+                  alt="Traditional Telugu Cooking"
                   className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] origin-bottom"
                 />
               </motion.div>
@@ -265,14 +281,14 @@ const Contact = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-end">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-2xl font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn"
+                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-[12px_0_12px_0] font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn border-2 border-transparent hover:border-primary/20"
                   >
                     Get a Quote
                     <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
                   </Link>
                   <a
                     href="tel:9542935841"
-                    className="w-full sm:w-auto px-12 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
+                    className="w-full sm:w-auto px-12 py-5 bg-transparent border-2 border-white/20 text-white rounded-[12px_0_12px_0] font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
                   >
                     <Phone size={20} className="mr-2" />
                     Call Us Now

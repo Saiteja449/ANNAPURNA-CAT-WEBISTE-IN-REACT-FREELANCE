@@ -11,7 +11,7 @@ import {
   Phone,
   ArrowRight,
 } from "lucide-react";
-import Cheif from "/assets/images/aboutCheif.png";
+import TraditionalCookingImg from "/assets/images/telugu_woman_cooking.png";
 
 const About = () => {
   const fadeInUp = {
@@ -25,18 +25,18 @@ const About = () => {
 
   return (
     <div className="pt-20 bg-white">
-      {/* --- HERO HEADER --- */}
       <section className="relative py-16 red-gradient text-white overflow-hidden">
         <div className="absolute inset-0 mandala-pattern opacity-10" />
-        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 relative z-10 text-center mt-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="space-y-6"
           >
-            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-4 block">
+            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-2 block">
               Established 2017
             </span>
+            <div className="text-accent telugu-text text-xl mb-4 font-bold">మా కథ</div>
             <h1 className="text-5xl md:text-7xl font-sans font-black mb-6 tracking-tighter">
               Our <span className="text-white italic">Story</span>
             </h1>
@@ -84,13 +84,20 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative"
+              className="relative p-4"
             >
-              <div className="relative z-10 w-full">
+              <div className="absolute inset-0 border-[6px] border-double border-primary/30 rounded-lg pointer-events-none z-20 m-2">
+                {/* Traditional corner blocks */}
+                <div className="absolute -top-1 -left-1 w-4 h-4 bg-accent" />
+                <div className="absolute -top-1 -right-1 w-4 h-4 bg-accent" />
+                <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-accent" />
+                <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-accent" />
+              </div>
+              <div className="relative z-10 w-full overflow-hidden rounded-md shadow-2xl">
                 <img
-                  src={Cheif}
-                  alt="Our Kitchen Passion"
-                  className="w-full h-auto object-cover"
+                  src="https://images.unsplash.com/photo-1589301773012-ab2bc47db6a8?auto=format&fit=crop&q=80&w=800"
+                  alt="Traditional Cooking"
+                  className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/20 blur-[80px] rounded-full" />
@@ -208,15 +215,16 @@ const About = () => {
               <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
-                className="text-center p-8 bg-gray-50 rounded-[2.5rem] border border-gray-100 group transition-all"
+                className="text-center p-8 bg-white border-2 border-primary/10 rounded-tr-[40px] rounded-bl-[40px] shadow-md group transition-all relative overflow-hidden"
               >
+                <div className="absolute top-0 left-0 w-full h-[4px] bg-accent opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="mb-6 flex justify-center text-primary group-hover:scale-110 transition-transform">
                   {item.icon}
                 </div>
-                <h4 className="text-lg font-black mb-2 text-gray-900 tracking-tight">
+                <h4 className="text-lg font-black mb-2 text-gray-900 tracking-tight font-serif">
                   {item.title}
                 </h4>
-                <p className="text-gray-400 text-xs font-bold leading-relaxed">
+                <p className="text-gray-500 text-xs font-bold leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -240,8 +248,8 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/assets/images/cheif.png"
-                  alt="Executive Chef"
+                  src={TraditionalCookingImg}
+                  alt="Traditional Cooking"
                   className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] origin-bottom"
                 />
               </motion.div>
@@ -265,14 +273,14 @@ const About = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-end">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-2xl font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn"
+                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-[12px_0_12px_0] font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn border-2 border-transparent hover:border-primary/20"
                   >
                     Get a Quote
                     <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
                   </Link>
                   <a
                     href="tel:9542935841"
-                    className="w-full sm:w-auto px-12 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
+                    className="w-full sm:w-auto px-12 py-5 bg-transparent border-2 border-white/20 text-white rounded-[12px_0_12px_0] font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
                   >
                     <Phone size={20} className="mr-2" />
                     Call Us Now

@@ -70,7 +70,94 @@
   animation: float 6s ease-in-out infinite;
 }
 
+@keyframes toran-sway {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+.animate-toran {
+  animation: toran-sway 4s ease-in-out infinite;
+}
+
+@keyframes rangoli-spin {
+  from { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.05); }
+  to { transform: rotate(360deg) scale(1); }
+}
+
+.animate-rangoli {
+  animation: rangoli-spin 20s linear infinite;
+}
+
 .mandala-pattern {
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6zM36 4V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 18V14H4v4H0v2h4v4h2v-4h4v-2H6zm0 30v-4H4v4H0v2h4v4h2v-4h4v-2H6zm30-12v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0 30v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM36 18v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM0 12v2h2v-2h2v-2H2V8H0v2h2v2H0zm0 30v2h2v-2h2v-2H2v-2H0v2h2v2H0zM30 12v2h2v-2h2v-2h-2V8h-2v2h2v2h-2zm0 30v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM12 0v2h2v2h2V2h-2V0h-2zm0 30v2h2v2h2v-2h-2v-2h-2zm24 0v2h2v2h2v-2h-2v-2h-2zM12 60v-2h2v-2h2v2h-2v2h-2zm24 0v-2h2v-2h2v2h-2v2h-2zM18 12v2h2v2h2v-2h-2v-2h-2zm30 0v2h2v2h2v-2h-2v-2h-2zm-30 30v2h2v2h2v-2h-2v-2h-2zm30 0v2h2v2h2v-2h-2v-2h-2zM0 24v2h2v2h2v-2H2v-2H0zm30 0v2h2v2h2v-2h-2v-2h-2zM12 18v2h2v2h2v-2h-2v-2h-2zm24 0v2h2v2h2v-2h-2v-2h-2zM12 48v2h2v2h2v-2h-2v-2h-2zm24 0v2h2v2h2v-2h-2v-2h-2zM0 54v2h2v2h2v-2H2v-2H0zm30 0v2h2v2h2v-2h-2v-2h-2zM18 0v2h2v2h2V2h-2V0h-2zm30 0v2h2v2h2V2h-2V0h-2zM18 30v2h2v2h2v-2h-2v-2h-2zm30 0v2h2v2h2v-2h-2v-2h-2zM18 60v-2h2v-2h2v2h-2v2h-2zm30 0v-2h2v-2h2v2h-2v2h-2zM0 6v2h2V6h2V4H2V2H0v2h2v2H0zm30 0v2h2V6h2V4h-2V2h-2v2h2v2h-2zm-12 6v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM12 12v2h2v-2h2v-2h-2V8h-2v2h2v2h-2zm24 0v2h2v-2h2v-2h-2V8h-2v2h2v2h-2zM12 42v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm24 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM0 36v2h2v-2h2v-2H2v-2H0v2h2v2H0zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM18 18v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm-30 30v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM12 18v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm24 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM12 48v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm24 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM18 36v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM18 6v2h2V6h2V4h-2V2h-2v2h2v2h-2zm30 0v2h2V6h2V4h-2V2h-2v2h2v2h-2zM0 18v2h2v-2h2v-2H2v-2H0v2h2v2H0zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM18 48v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM0 48v2h2v-2h2v-2H2v-2H0v2h2v2H0zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM18 24v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zm30 0v2h2v-2h2v-2h-2v-2h-2v2h2v2h-2zM0 0v2h2V0H0zm30 0v2h2V0h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.pattern-toran {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='40' viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 Q30,25 60,0 Q90,25 120,0' fill='none' stroke='%23C9A227' stroke-width='3.5'/%3E%3Cpath d='M30,10 L22,38 L38,38 Z' fill='%23C9A227'/%3E%3Cpath d='M90,10 L82,38 L98,38 Z' fill='%23C9A227'/%3E%3Ccircle cx='60' cy='12' r='8' fill='%23FDFDFD'/%3E%3Ccircle cx='60' cy='12' r='4' fill='%23D32F2F'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: top;
+  background-size: 100px 32px;
+}
+
+.pattern-rangoli {
+  background-image: url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cg stroke='%23D32F2F' stroke-width='2' fill='none' opacity='0.25'%3E%3Cpath d='M100,20 Q140,100 100,180 Q60,100 100,20 Z'/%3E%3Cpath d='M20,100 Q100,140 180,100 Q100,60 20,100 Z'/%3E%3Cpath d='M40,40 Q100,100 160,160 M40,160 Q100,100 160,40' stroke-dasharray='5,5'/%3E%3Ccircle cx='100' cy='100' r='20'/%3E%3Ccircle cx='100' cy='100' r='40' stroke-dasharray='10,10'/%3E%3Ccircle cx='100' cy='100' r='60'/%3E%3Ccircle cx='100' cy='100' r='6' fill='%23C9A227'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.pattern-leaf-border {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='30' viewBox='0 0 100 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,15 Q25,-5 50,15 T100,15' fill='none' stroke='%23D32F2F' stroke-width='2' opacity='0.4'/%3E%3Cpath d='M15,10 Q25,25 35,10 Z' fill='%23C9A227' opacity='0.6'/%3E%3Cpath d='M65,10 Q75,25 85,10 Z' fill='%23C9A227' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-size: 100px 30px;
+}
+
+.temple-btn {
+  border: 2px solid var(--color-primary);
+  border-radius: 12px 0 12px 0;
+  box-shadow: 4px 4px 0px rgba(211, 47, 47, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.temple-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 1px solid var(--color-accent);
+  border-radius: 10px 0 10px 0;
+  margin: 2px;
+  pointer-events: none;
+}
+
+.temple-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px rgba(211, 47, 47, 0.2);
+}
+
+.temple-card {
+  border: 2px solid var(--color-primary-dark);
+  border-radius: 4px;
+  position: relative;
+  background-color: white;
+  padding: 2px;
+}
+
+.temple-card-inner {
+  border: 1px solid var(--color-accent);
+  border-radius: 2px;
+  height: 100%;
+}
+
+.banana-leaf-shape {
+  border-radius: 4px 60px 4px 60px;
+}
+
+.telugu-text {
+  font-family: 'Playfair Display', serif;
+  opacity: 0.9;
+  letter-spacing: 0.5px;
 }
 

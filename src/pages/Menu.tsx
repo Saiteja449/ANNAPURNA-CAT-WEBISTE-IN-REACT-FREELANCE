@@ -16,16 +16,16 @@ const Menu = () => {
 
   return (
     <div className="pt-20 bg-white">
-      {/* --- HERO HEADER --- */}
       <section className="relative py-24 red-gradient text-white overflow-hidden text-center">
         <div className="absolute inset-0 mandala-pattern opacity-10" />
-        <div className="max-w-7xl mx-auto px-4 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 relative z-10 mt-6">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="space-y-6"
           >
-            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-4 block">Our Culinary Curation</span>
+            <span className="text-white font-bold tracking-[0.4em] uppercase text-xs mb-2 block">Our Culinary Curation</span>
+            <div className="text-accent telugu-text text-xl mb-4 font-bold">మన వంటలు</div>
             <h1 className="text-5xl md:text-7xl font-sans font-black mb-6 tracking-tighter">
               The <span className="text-white italic">Grand Menu</span>
             </h1>
@@ -45,21 +45,30 @@ const Menu = () => {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
                 variants={stagger}
-                className="break-inside-avoid"
+                className="break-inside-avoid bg-white p-8 border-2 border-primary/10 shadow-lg banana-leaf-shape relative overflow-hidden group hover:border-primary/30 transition-all"
               >
-                <div className="mb-6 flex items-center space-x-3">
+                {/* Traditional motif inside card */}
+                <div className="absolute top-4 right-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                  <svg width="40" height="40" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="40" fill="none" stroke="var(--color-primary)" strokeWidth="4" strokeDasharray="10 5" />
+                    <circle cx="50" cy="50" r="10" fill="var(--color-accent)" />
+                  </svg>
+                </div>
+                
+                <div className="mb-6 flex items-center space-x-3 relative z-10 border-b border-primary/10 pb-4">
                   <div className="w-10 h-1 gold-gradient rounded-full" />
-                  <h3 className="text-xl font-black text-gray-900 uppercase tracking-tighter">
+                  <h3 className="text-xl font-bold text-gray-900 uppercase tracking-widest font-serif">
                     {category}
                   </h3>
                 </div>
-                <div className="space-y-2 pl-4 border-l-2 border-gray-50">
+                <div className="space-y-3 pl-2 relative z-10">
                   {items.map((item, idx) => (
                     <motion.div 
                       key={idx} 
                       variants={fadeInUp}
-                      className="text-gray-500 font-medium text-lg hover:text-primary transition-colors py-1 cursor-default"
+                      className="flex items-center text-gray-600 font-medium text-md hover:text-primary transition-colors py-1 cursor-default group/item"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent mr-3 opacity-0 group-hover/item:opacity-100 transition-opacity" />
                       {item}
                     </motion.div>
                   ))}
@@ -108,14 +117,14 @@ const Menu = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-end">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-2xl font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn"
+                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-[12px_0_12px_0] font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn border-2 border-transparent hover:border-primary/20"
                   >
                     Get a Quote
                     <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
                   </Link>
                   <a
                     href="tel:9542935841"
-                    className="w-full sm:w-auto px-12 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
+                    className="w-full sm:w-auto px-12 py-5 bg-transparent border-2 border-white/20 text-white rounded-[12px_0_12px_0] font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
                   >
                     <Phone size={20} className="mr-2" />
                     Call Us Now

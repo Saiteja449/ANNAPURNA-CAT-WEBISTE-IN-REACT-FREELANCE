@@ -28,11 +28,13 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-primary backdrop-blur-md  py-3"
-          : "bg-primary backdrop-blur-sm  py-5 md:py-3"
+          ? "bg-primary backdrop-blur-md py-3"
+          : "bg-primary backdrop-blur-sm py-5 md:py-3"
       } border-b border-gray-100`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Thorana in Navbar - Taller and more visible with subtle swaying animation */}
+      <div className="absolute top-0 left-0 w-full h-[40px] pattern-toran z-10 pointer-events-none brightness-110 animate-toran" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center">
             <img
@@ -60,13 +62,13 @@ const Navbar = () => {
             <div className="w-[1px] h-6 bg-gray-100 mx-4" />
             <a
               href="tel:9542935841"
-              className="flex items-center space-x-2  text-primary bg-white px-6 py-3 rounded-xl hover:scale-105 transition-all shadow-lg shadow-primary/20 active:scale-95 group"
+              className="flex items-center space-x-2 temple-btn px-6 py-3 hover:scale-105 transition-all shadow-lg shadow-primary/20 active:scale-95 group"
             >
               <Phone
                 size={16}
-                className="group-hover:rotate-12 transition-transform"
+                className="group-hover:rotate-12 transition-transform text-primary"
               />
-              <span className="font-bold tracking-wider text-xs uppercase">
+              <span className="font-bold tracking-wider text-xs uppercase text-primary">
                 Call Now
               </span>
             </a>

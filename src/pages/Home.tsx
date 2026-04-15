@@ -17,8 +17,39 @@ import {
 } from "lucide-react";
 import PlatesImg from "/assets/images/plates.jpg";
 
+// Elephant Icon for traditional decor - More detailed Rangoli-style line-art
+const ElephantIcon = ({ className = "" }) => (
+  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+    {/* Outline */}
+    <path 
+      d="M165 130c0 15-15 25-30 25h-10v15c0 5-5 10-10 10h-15c-5 0-10-5-10-10v-15h-35v15c0 5-5 10-10 10H40c-5 0-10-5-10-10v-15h-5c-20 0-35-15-35-35v-10c0-50 40-80 85-80h55c35 0 60 25 60 55v40z" 
+      stroke="currentColor" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+    />
+    {/* Traditional Tusk */}
+    <path d="M25 125c-8 0-15-5-15-15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    
+    {/* Body Decorations (Rangoli style) */}
+    <circle cx="95" cy="80" r="25" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" />
+    <circle cx="95" cy="80" r="15" stroke="currentColor" strokeWidth="1" />
+    <path d="M70 80h50M95 55v50" stroke="currentColor" strokeWidth="1" opacity="0.5" />
+    
+    {/* Saddle/Ambari Decor */}
+    <rect x="75" y="45" width="40" height="25" rx="3" stroke="currentColor" strokeWidth="2" />
+    <path d="M85 45v25M105 45v25" stroke="currentColor" strokeWidth="1" />
+    
+    {/* Leg patterns */}
+    <path d="M45 155h15M105 155h15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    
+    {/* Eye */}
+    <circle cx="140" cy="85" r="3" fill="currentColor" />
+    <path d="M130 80c5-5 15-5 20 0" stroke="currentColor" strokeWidth="1" />
+  </svg>
+);
+
 // Reference images from the public directory for Vite compatibility
-const HERO_IMAGE = "/assets/images/hero.png";
+const HERO_IMAGE = "/assets/images/telugu_women_cooking.png";
 
 const Home = () => {
   const containerVariants = {
@@ -39,11 +70,26 @@ const Home = () => {
   };
 
   return (
-    <div className="overflow-x-hidden  bg-white  ">
-      <section className="relative min-h-[100vh] flex items-center pt-24 pb-12 bg-white   overflow-hidden">
-        <div className="absolute top-20 right-[-10%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-20 left-[-5%] w-[300px] h-[300px] bg-primary/5 rounded-full blur-[80px]" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="overflow-x-hidden bg-white">
+      <section className="relative min-h-screen flex items-center pt-24 pb-32 md:pb-0 bg-white overflow-hidden">
+        {/* Corner Rangolis */}
+        <div className="absolute top-10 left-0 w-[300px] h-[300px] z-10 -translate-x-1/3 -translate-y-1/3 pointer-events-none">
+           <div className="w-full h-full pattern-rangoli animate-rangoli" />
+        </div>
+        <div className="absolute top-10 right-0 w-[400px] h-[400px] z-10 translate-x-1/3 -translate-y-1/3 pointer-events-none hidden md:block">
+           <div className="w-full h-full pattern-rangoli animate-rangoli" />
+        </div>
+
+        {/* Traditional Elephants at bottom - Expanding to complete the full section width */}
+        <div className="absolute md:-bottom-2 -bottom-8 -left-12  w-full h-[180px] md:h-[40%] z-10 pointer-events-none opacity-[0.2]">
+          <img 
+            src="/assets/images/welcoming_elephant.png" 
+            alt="Traditional Elephant Decor" 
+            className="w-full h-full object-contain object-bottom"
+          />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
             {/* Left Content (Text & Quote) */}
             <motion.div
@@ -54,12 +100,14 @@ const Home = () => {
             >
               <motion.h1
                 variants={itemVariants}
-                className="text-4xl md:text-6xl font-sans font-black text-gray-900 mb-8 leading-[1.2] tracking-tight"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black text-gray-900 mb-6 lg:mb-8 leading-[1.2] tracking-tight relative inline-block"
               >
-                "Celebrate your occasions <br />
-                with the richness of <br />
-                <span className="text-primary italic">
+                <span className="block text-accent text-xl md:text-2xl font-serif italic mb-2 md:mb-4 telugu-text">స్వాగతం (Welcome)</span>
+                "Celebrate your occasions <br className="hidden sm:block" />
+                with the richness of <br className="hidden sm:block" />
+                <span className="text-primary italic relative">
                   traditional flavours"
+                  <div className="absolute -bottom-4 left-0 w-full h-[15px] md:h-[20px] pattern-leaf-border" />
                 </span>
               </motion.h1>
 
@@ -78,14 +126,14 @@ const Home = () => {
               >
                 <a
                   href="tel:9542935841"
-                  className="w-full sm:w-auto px-10 py-5 red-gradient rounded-2xl font-bold text-white shadow-xl shadow-primary/20 hover:scale-105 transition-all flex items-center justify-center group"
+                  className="w-full sm:w-auto px-10 py-5 temple-btn flex items-center justify-center font-bold group"
                 >
                   <Phone size={18} className="mr-2" />
                   Call Now
                 </a>
                 <Link
                   to="/contact"
-                  className="w-full sm:w-auto px-10 py-5 bg-white border-2 border-primary/10 text-primary rounded-2xl font-bold hover:bg-primary/5 transition-all flex items-center justify-center"
+                  className="w-full sm:w-auto px-10 py-5 bg-white border-2 border-primary/20 text-primary rounded-[12px_0_12px_0] font-bold hover:bg-primary/5 transition-all flex items-center justify-center"
                 >
                   Enquire Now
                   <ArrowRight size={18} className="ml-2" />
@@ -93,22 +141,20 @@ const Home = () => {
               </motion.div>
             </motion.div>
 
-            {/* Right Image Composition */}
+            {/* Right Image - Anchored to bottom right and larger */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="lg:col-span-2 relative order-1 lg:order-2"
+              className="lg:col-span-2 relative min-h-[300px] sm:min-h-[400px] lg:h-full flex items-end justify-center lg:justify-end order-1 lg:order-2"
             >
-              <div className="relative z-10">
+              <div className="relative z-10 w-full max-w-[400px] sm:max-w-[500px] lg:max-w-none lg:w-[550px] lg:absolute lg:-bottom-0 lg:right-[-10%]">
                 <img
                   src={HERO_IMAGE}
-                  alt="Premium Plate"
-                  className="w-full max-w-[300px] md:max-w-[450px] mx-auto "
+                  alt="Traditional Telugu Cooking"
+                  className="w-full h-auto object-contain object-bottom"
                 />
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] md:w-[400px] h-[250px] md:h-[400px] border-[1px] border-dashed border-primary/20 rounded-full animate-[spin_20s_linear_infinite]" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] md:w-[300px] h-[200px] md:h-[300px] border-[1px] border-primary/10 rounded-full" />
             </motion.div>
           </div>
         </div>
@@ -127,8 +173,8 @@ const Home = () => {
             >
               <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
                 <div className="w-12 h-[2px] bg-primary" />
-                <span className="text-primary font-bold text-xl uppercase ">
-                  Features
+                <span className="text-primary font-bold text-xl uppercase tracking-widest relative">
+                  Features | మా ప్రత్యేకతలు
                 </span>
               </div>
               <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
@@ -174,21 +220,23 @@ const Home = () => {
                   transition={{ delay: i * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
                   className={`
-                    p-8 rounded-[2.5rem] flex flex-col items-center text-center transition-all duration-300
-                    ${feature.fullWidth ? "md:col-span-2 bg-gray-900 text-white hover:bg-black" : "bg-white border border-gray-100 hover:shadow-2xl shadow-sm"}
+                    p-8 flex flex-col items-center text-center transition-all duration-300 temple-card 
+                    ${feature.fullWidth ? "md:col-span-2 bg-gray-900 border-none before:hidden after:hidden hover:bg-black rounded-xl" : "hover:shadow-2xl shadow-sm"}
                   `}
                 >
-                  <div
-                    className={`p-4 rounded-2xl mb-6 ${feature.fullWidth ? "bg-white/10 text-accent" : `bg-${feature.color}/10 text-${feature.color}`}`}
-                  >
-                    {feature.icon}
+                  <div className={feature.fullWidth ? "w-full flex flex-col items-center" : "temple-card-inner p-6 flex flex-col items-center"}>
+                    <div
+                      className={`p-4 rounded-full mb-6 ${feature.fullWidth ? "bg-white/10 text-accent" : `bg-${feature.color}/10 text-${feature.color}`}`}
+                    >
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
+                    <p
+                      className={`${feature.fullWidth ? "text-gray-400" : "text-gray-500"} text-sm leading-relaxed`}
+                    >
+                      {feature.desc}
+                    </p>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                  <p
-                    className={`${feature.fullWidth ? "text-gray-400" : "text-gray-500"} text-sm leading-relaxed`}
-                  >
-                    {feature.desc}
-                  </p>
                 </motion.div>
               ))}
             </div>
@@ -199,9 +247,10 @@ const Home = () => {
       <section className="py-16 red-gradient">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-2 font-serif">
               Our Services
             </h2>
+            <div className="text-accent telugu-text text-xl mb-4">మా సేవలు</div>
             <p className="text-white max-w-2xl mx-auto">
               Flexible catering options designed to fit every occasion and
               budget.
@@ -266,7 +315,7 @@ const Home = () => {
                   </p>
                   <Link
                     to="/services"
-                    className="text-primary font-bold text-sm flex items-center justify-center group/link"
+                    className="temple-btn inline-flex px-6 py-3 font-bold text-sm items-center justify-center group/link mt-auto"
                   >
                     View Details{" "}
                     <ArrowRight
@@ -287,9 +336,10 @@ const Home = () => {
             <span className="text-accent font-bold text-xs uppercase tracking-[0.3em] mb-3 block">
               Simple & Seamless
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-serif">
               How It Works
             </h2>
+            <div className="text-primary telugu-text text-lg mt-2">ఎలా పనిచేస్తుంది</div>
           </div>
 
           <div className="relative">
@@ -445,10 +495,14 @@ const Home = () => {
             ].map((t, idx) => (
               <motion.div
                 key={idx}
-                whileHover={{ y: -10 }}
-                className="bg-white p-10 rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all"
+                whileHover={{ y: -5 }}
+                className="bg-white p-8 border-2 border-primary/20 shadow-sm hover:shadow-xl transition-all banana-leaf-shape relative"
               >
-                <div className="mb-6 flex">
+                {/* Traditional corner element for testimonial */}
+                <div className="absolute top-4 right-4 text-primary/10">
+                  <Star size={40} fill="currentColor" />
+                </div>
+                <div className="mb-6 flex relative z-10">
                   {[1, 2, 3, 4, 5].map((s) => (
                     <Star
                       key={s}
@@ -457,11 +511,11 @@ const Home = () => {
                     />
                   ))}
                 </div>
-                <p className="text-gray-600 mb-8 italic leading-relaxed">
+                <p className="text-gray-600 mb-8 italic leading-relaxed relative z-10">
                   "{t.text}"
                 </p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 rounded-2xl red-gradient flex items-center justify-center text-white font-bold">
+                <div className="flex items-center space-x-4 relative z-10 border-t border-dashed border-primary/20 pt-4">
+                  <div className="w-12 h-12 rounded-full border-2 border-accent flex items-center justify-center text-primary font-bold bg-primary/5">
                     {t.name[0]}
                   </div>
                   <div>
@@ -492,8 +546,8 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/assets/images/cheif.png"
-                  alt="Executive Chef"
+                  src="/assets/images/telugu_woman_cooking.png"
+                  alt="Traditional Telugu Cooking"
                   className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] origin-bottom"
                 />
               </motion.div>
