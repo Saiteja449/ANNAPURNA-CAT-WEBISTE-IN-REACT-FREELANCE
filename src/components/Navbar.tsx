@@ -68,7 +68,7 @@ const Navbar = () => {
                 size={16}
                 className="group-hover:rotate-12 transition-transform text-primary"
               />
-              <span className="font-bold tracking-wider text-xs uppercase text-primary">
+              <span className="font-bold tracking-wider text-xs uppercase text-white">
                 Call Now
               </span>
             </a>

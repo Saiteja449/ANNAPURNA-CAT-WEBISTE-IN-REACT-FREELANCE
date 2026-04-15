@@ -16,6 +16,7 @@ import {
   Phone,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import TraditionalCookingImg from "/assets/images/headCheid1.png";
 
 const iconMap = {
   Heart,
@@ -80,14 +81,14 @@ const Services = () => {
               {
                 title: "Meal Box",
                 desc: "Individually packed gourmet meals, perfect for corporate events or daily staff lunches.",
-                img: "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?auto=format&fit=crop&q=80&w=600",
+                img: "/assets/images/services/meal_box.png",
                 color: "bg-red-50",
                 icon: <LeafIcon className="text-primary" size={60} />,
               },
               {
                 title: "Grand Catering",
                 desc: "Complete buffet service with live counters, uniformed staff, and luxury presentation.",
-                img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=600",
+                img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800",
                 color: "bg-orange-50",
                 icon: <KalashIcon className="text-accent" size={60} />,
                 popular: true,
@@ -95,7 +96,7 @@ const Services = () => {
               {
                 title: "Delivery Only",
                 desc: "Bulk food delivery in high-quality thermal containers. Hot and fresh food at your doorstep.",
-                img: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=600",
+                img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=800",
                 color: "bg-blue-50",
                 icon: <DiyaIcon className="text-primary" size={60} />,
               },
@@ -163,8 +164,12 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="red-gradient rounded-[3rem] min-h-[450px] relative overflow-hidden shadow-2xl shadow-primary/30 flex items-center group">
             <div className="absolute inset-0 mandala-pattern opacity-10" />
+            
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-12 pattern-toran opacity-50 z-20 animate-toran" />
+            <div className="absolute top-10 right-10 w-64 h-64 pattern-rangoli opacity-10 animate-rangoli" />
 
-            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none hidden lg:block">
+            <div className="absolute bottom-1 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[600px] z-10 pointer-events-none hidden lg:block">
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -172,8 +177,8 @@ const Services = () => {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/assets/images/telugu_woman_cooking.png"
-                  alt="Traditional Telugu Cooking"
+                  src={TraditionalCookingImg}
+                  alt="Traditional Welcoming Elephant"
                   className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] origin-bottom"
                 />
               </motion.div>
@@ -196,14 +201,14 @@ const Services = () => {
                 <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-end">
                   <Link
                     to="/contact"
-                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-[12px_0_12px_0] font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn border-2 border-transparent hover:border-primary/20"
+                    className="w-full sm:w-auto px-12 py-5 bg-white text-primary rounded-2xl font-black text-lg hover:bg-gray-50 transition-all shadow-xl shadow-black/20 flex items-center justify-center group/btn"
                   >
                     Get a Quote
                     <ArrowRight className="ml-2 group-hover/btn:translate-x-2 transition-transform" />
                   </Link>
                   <a
                     href="tel:9542935841"
-                    className="w-full sm:w-auto px-12 py-5 bg-transparent border-2 border-white/20 text-white rounded-[12px_0_12px_0] font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
+                    className="w-full sm:w-auto px-12 py-5 border-2 border-white/20 text-white rounded-2xl font-bold text-lg hover:bg-white/10 transition-all backdrop-blur-sm flex items-center justify-center"
                   >
                     <Phone size={20} className="mr-2" />
                     Call Us Now

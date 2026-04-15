@@ -15,10 +15,10 @@ const Footer = () => {
           <div className="space-y-8">
             <Link to="/" className="flex flex-col group">
               <span className="text-3xl font-black text-white leading-tight tracking-tighter">
-                Annapurna<span className="text-primary italic">.</span>
+               Sri Annapurna<span className="text-primary italic">.</span>
               </span>
               <span className="text-[10px] tracking-[0.4em] uppercase font-bold text-accent">
-                Premium Catering
+                Caterers
               </span>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed max-w-xs">

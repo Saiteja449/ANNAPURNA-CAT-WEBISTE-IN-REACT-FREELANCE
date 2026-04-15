@@ -16,32 +16,68 @@ import {
   ChefHat,
 } from "lucide-react";
 import PlatesImg from "/assets/images/plates.jpg";
+import TraditionalCookingImg from "/assets/images/headCheid1.png";
 
 // Elephant Icon for traditional decor - More detailed Rangoli-style line-art
 const ElephantIcon = ({ className = "" }) => (
-  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+  <svg
+    viewBox="0 0 200 200"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
     {/* Outline */}
-    <path 
-      d="M165 130c0 15-15 25-30 25h-10v15c0 5-5 10-10 10h-15c-5 0-10-5-10-10v-15h-35v15c0 5-5 10-10 10H40c-5 0-10-5-10-10v-15h-5c-20 0-35-15-35-35v-10c0-50 40-80 85-80h55c35 0 60 25 60 55v40z" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
+    <path
+      d="M165 130c0 15-15 25-30 25h-10v15c0 5-5 10-10 10h-15c-5 0-10-5-10-10v-15h-35v15c0 5-5 10-10 10H40c-5 0-10-5-10-10v-15h-5c-20 0-35-15-35-35v-10c0-50 40-80 85-80h55c35 0 60 25 60 55v40z"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
     />
     {/* Traditional Tusk */}
-    <path d="M25 125c-8 0-15-5-15-15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    
+    <path
+      d="M25 125c-8 0-15-5-15-15"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+
     {/* Body Decorations (Rangoli style) */}
-    <circle cx="95" cy="80" r="25" stroke="currentColor" strokeWidth="1.5" strokeDasharray="4 4" />
+    <circle
+      cx="95"
+      cy="80"
+      r="25"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeDasharray="4 4"
+    />
     <circle cx="95" cy="80" r="15" stroke="currentColor" strokeWidth="1" />
-    <path d="M70 80h50M95 55v50" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-    
+    <path
+      d="M70 80h50M95 55v50"
+      stroke="currentColor"
+      strokeWidth="1"
+      opacity="0.5"
+    />
+
     {/* Saddle/Ambari Decor */}
-    <rect x="75" y="45" width="40" height="25" rx="3" stroke="currentColor" strokeWidth="2" />
+    <rect
+      x="75"
+      y="45"
+      width="40"
+      height="25"
+      rx="3"
+      stroke="currentColor"
+      strokeWidth="2"
+    />
     <path d="M85 45v25M105 45v25" stroke="currentColor" strokeWidth="1" />
-    
+
     {/* Leg patterns */}
-    <path d="M45 155h15M105 155h15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-    
+    <path
+      d="M45 155h15M105 155h15"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+    />
+
     {/* Eye */}
     <circle cx="140" cy="85" r="3" fill="currentColor" />
     <path d="M130 80c5-5 15-5 20 0" stroke="currentColor" strokeWidth="1" />
@@ -74,20 +110,20 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center pt-24 pb-32 md:pb-0 bg-white overflow-hidden">
         {/* Corner Rangolis */}
         <div className="absolute top-10 left-0 w-[300px] h-[300px] z-10 -translate-x-1/3 -translate-y-1/3 pointer-events-none">
-           <div className="w-full h-full pattern-rangoli animate-rangoli" />
+          <div className="w-full h-full pattern-rangoli animate-rangoli" />
         </div>
         <div className="absolute top-10 right-0 w-[400px] h-[400px] z-10 translate-x-1/3 -translate-y-1/3 pointer-events-none hidden md:block">
-           <div className="w-full h-full pattern-rangoli animate-rangoli" />
+          <div className="w-full h-full pattern-rangoli animate-rangoli" />
         </div>
 
         {/* Traditional Elephants at bottom - Expanding to complete the full section width */}
-        <div className="absolute md:-bottom-2 -bottom-8 -left-12  w-full h-[180px] md:h-[40%] z-10 pointer-events-none opacity-[0.2]">
-          <img 
-            src="/assets/images/welcoming_elephant.png" 
-            alt="Traditional Elephant Decor" 
+        {/* <div className="absolute md:-bottom-2 -bottom-8 -left-12  w-full h-[180px] md:h-[40%] z-10 pointer-events-none opacity-[0.2]">
+          <img
+            src="/assets/images/welcoming_elephant.png"
+            alt="Traditional Elephant Decor"
             className="w-full h-full object-contain object-bottom"
           />
-        </div>
+        </div> */}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
@@ -102,7 +138,9 @@ const Home = () => {
                 variants={itemVariants}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-black text-gray-900 mb-6 lg:mb-8 leading-[1.2] tracking-tight relative inline-block"
               >
-                <span className="block text-accent text-xl md:text-2xl font-serif italic mb-2 md:mb-4 telugu-text">స్వాగతం (Welcome)</span>
+                <span className="block text-accent text-xl md:text-2xl font-serif italic mb-2 md:mb-4 telugu-text">
+                  స్వాగతం (Welcome)
+                </span>
                 "Celebrate your occasions <br className="hidden sm:block" />
                 with the richness of <br className="hidden sm:block" />
                 <span className="text-primary italic relative">
@@ -224,7 +262,13 @@ const Home = () => {
                     ${feature.fullWidth ? "md:col-span-2 bg-gray-900 border-none before:hidden after:hidden hover:bg-black rounded-xl" : "hover:shadow-2xl shadow-sm"}
                   `}
                 >
-                  <div className={feature.fullWidth ? "w-full flex flex-col items-center" : "temple-card-inner p-6 flex flex-col items-center"}>
+                  <div
+                    className={
+                      feature.fullWidth
+                        ? "w-full flex flex-col items-center"
+                        : "temple-card-inner p-6 flex flex-col items-center"
+                    }
+                  >
                     <div
                       className={`p-4 rounded-full mb-6 ${feature.fullWidth ? "bg-white/10 text-accent" : `bg-${feature.color}/10 text-${feature.color}`}`}
                     >
@@ -262,14 +306,14 @@ const Home = () => {
               {
                 title: "Meal Box",
                 desc: "Individually packed gourmet meals, perfect for corporate events or daily staff lunches.",
-                img: "https://images.unsplash.com/photo-1547928576-a4a33237cbc3?auto=format&fit=crop&q=80&w=600",
+                img: "/assets/images/services/meal_box.png",
                 color: "bg-red-50",
                 icon: <Truck className="text-primary" size={24} />,
               },
               {
                 title: "Grand Catering",
                 desc: "Complete buffet service with live counters, uniformed staff, and luxury presentation.",
-                img: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=600",
+                img: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&q=80&w=800",
                 color: "bg-orange-50",
                 icon: <Users className="text-accent" size={24} />,
                 popular: true,
@@ -277,7 +321,7 @@ const Home = () => {
               {
                 title: "Delivery Only",
                 desc: "Bulk food delivery in high-quality thermal containers. Hot and fresh food at your doorstep.",
-                img: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&q=80&w=600",
+                img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80&w=800",
                 color: "bg-blue-50",
                 icon: <Calendar className="text-gray-600" size={24} />,
               },
@@ -339,7 +383,9 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 font-serif">
               How It Works
             </h2>
-            <div className="text-primary telugu-text text-lg mt-2">ఎలా పనిచేస్తుంది</div>
+            <div className="text-primary telugu-text text-lg mt-2">
+              ఎలా పనిచేస్తుంది
+            </div>
           </div>
 
           <div className="relative">
@@ -537,8 +583,12 @@ const Home = () => {
           <div className="red-gradient rounded-[3rem] min-h-[450px] relative overflow-hidden shadow-2xl shadow-primary/30 flex items-center group">
             <div className="absolute inset-0 mandala-pattern opacity-10" />
 
+            {/* Background Decorative Elements */}
+            <div className="absolute top-0 left-0 w-full h-12 pattern-toran opacity-50 z-20 animate-toran" />
+            <div className="absolute top-10 right-10 w-64 h-64 pattern-rangoli opacity-10 animate-rangoli" />
+
             {/* Left Chef Image - Positioned at bottom */}
-            <div className="absolute bottom-0 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[500px] z-10 pointer-events-none hidden lg:block">
+            <div className="absolute bottom-1 left-0 lg:left-12 w-[300px] md:w-[400px] lg:w-[600px] z-10 pointer-events-none hidden lg:block">
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -546,14 +596,12 @@ const Home = () => {
                 viewport={{ once: true }}
               >
                 <img
-                  src="/assets/images/telugu_woman_cooking.png"
-                  alt="Traditional Telugu Cooking"
+                  src={TraditionalCookingImg}
+                  alt="Traditional Welcoming Elephant"
                   className="w-full h-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] origin-bottom"
                 />
               </motion.div>
             </div>
-
-            {/* Right Content - Centered vertically */}
             <div className="relative z-20 w-full lg:w-4/5 ml-auto px-8 py-16 md:p-16 lg:pr-24 text-center lg:text-right">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
